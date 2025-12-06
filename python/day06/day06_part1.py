@@ -7,11 +7,8 @@ problems = list(zip(*problems))
 total = 0
 for *numbers, op in problems:
     numbers = list(map(int, numbers))
-    if op == "+":
-        op = operator.add
-    elif op == "*":
-        op = operator.mul
 
+    op = operator.add if op == "+" else operator.mul
     problem_total = reduce(op, numbers)
 
     total += problem_total
